@@ -1,42 +1,50 @@
-# TaskTracker
-API RESTful para gestionar tareas con Spring Boot
+# 🚀 TaskTracker
 
-Task Tracker API
+[![Java](https://img.shields.io/badge/Java-23-blue)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)](https://spring.io/projects/spring-boot)
+[![H2 Database](https://img.shields.io/badge/H2%20DB-in-memory-orange)](https://www.h2database.com/html/main.html)
 
-Task Tracker es una API RESTful desarrollada con Spring Boot para gestionar tareas de forma sencilla. Permite a los usuarios crear, actualizar, listar, marcar y eliminar tareas, sirviendo como una herramienta práctica para organizar el trabajo diario o proyectos personales.
+**API RESTful para gestionar tareas con Spring Boot**  
 
-Características
+TaskTracker es una API diseñada para **crear, listar, actualizar, marcar y eliminar tareas**, ideal para organizar el trabajo diario o proyectos personales.
 
-Crear tareas: Agrega nuevas tareas con descripción y estado inicial TODO.
+---
 
-Listar tareas: Recupera todas las tareas o filtra por estado (TODO, IN_PROGRESS, DONE).
+## ✨ Características
 
-Actualizar tareas: Modifica la descripción de una tarea existente.
+- ✅ **Crear tareas** con estado inicial `TODO`  
+- 📋 **Listar tareas** o filtrar por estado (`TODO`, `IN_PROGRESS`, `DONE`)  
+- ✏️ **Actualizar tareas** modificando la descripción  
+- 🔄 **Marcar tareas** como `IN_PROGRESS` o `DONE`  
+- 🗑 **Eliminar tareas** completadas o innecesarias  
 
-Marcar tareas: Cambia el estado de una tarea a IN_PROGRESS o DONE.
+---
 
-Eliminar tareas: Elimina tareas completadas o innecesarias.
+## 🛠 Tecnologías
 
-Tecnologías
+- **Java 23**  
+- **Spring Boot 3.x**  
+- **Spring Data JPA**  
+- **H2 Database** (base de datos en memoria; fácil de reemplazar por MySQL/PostgreSQL)  
+- **Jackson** para serialización JSON  
 
-Java 23
+---
 
-Spring Boot 3.x
+## 🔗 Endpoints
 
-Spring Data JPA
+| Método | URL | Descripción | Parámetros |
+|--------|-----|------------|------------|
+| POST   | `/tasks` | Crear nueva tarea | `description` (query param) |
+| GET    | `/tasks` | Listar todas las tareas | `status` (opcional) |
+| PUT    | `/tasks/{id}` | Actualizar descripción | `description` (query param) |
+| PUT    | `/tasks/{id}/mark` | Cambiar estado | `status` (`TODO`, `IN_PROGRESS`, `DONE`) |
+| DELETE | `/tasks/{id}` | Eliminar tarea | - |
 
-H2 Database (base de datos en memoria, fácil de reemplazar por MySQL, PostgreSQL, etc.)
+---
 
-Jackson para serialización JSON
+## 📄 Ejemplo de respuesta JSON
 
-Endpoints
-Método	URL	Descripción	Parámetros
-POST	/tasks	Crear nueva tarea	description (query param)
-GET	/tasks	Listar todas las tareas	status (opcional)
-PUT	/tasks/{id}	Actualizar descripción	description (query param)
-PUT	/tasks/{id}/mark	Cambiar estado de la tarea	status (TODO, IN_PROGRESS, DONE)
-DELETE	/tasks/{id}	Eliminar tarea	-
-Ejemplo de respuesta JSON
+```json
 {
   "id": 1,
   "description": "Comprar leche",
@@ -44,27 +52,3 @@ Ejemplo de respuesta JSON
   "createdAt": "2025-09-30T18:20:00",
   "updatedAt": "2025-09-30T18:20:00"
 }
-
-Cómo ejecutar
-
-Clonar el repositorio:
-
-git clone https://github.com/tu-usuario/demo.git
-
-
-Abrir el proyecto en VSCode o IntelliJ.
-
-Ejecutar con Maven:
-
-mvn spring-boot:run
-
-
-La API correrá en http://localhost:8080.
-
-Próximos pasos / mejoras
-
-Persistencia en base de datos real (MySQL, PostgreSQL).
-
-Validación de entradas y manejo de errores más detallado.
-
-Frontend web o app móvil para interactuar con la API.
