@@ -52,32 +52,3 @@ TaskTracker es una API diseñada para **crear, listar, actualizar, marcar y elim
   "createdAt": "2025-09-30T18:20:00",
   "updatedAt": "2025-09-30T18:20:00"
 }
-
-
-
-
-⚡ Cómo ejecutar
-
-Clonar el repositorio:
-
-git clone https://github.com/tu-usuario/demo.git
-
-
-Abrir el proyecto en VSCode o IntelliJ
-
-Ejecutar con Maven:
-
-mvn spring-boot:run
-
-
-Acceder a la API en:
-
-http://localhost:8080
-
-🚀 Próximos pasos / mejoras
-
-Persistencia en base de datos real (MySQL, PostgreSQL)
-
-Validación de entradas y manejo de errores más completo
-
-Crear un frontend web o app móvil para interactuar con la API
